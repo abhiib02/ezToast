@@ -1,0 +1,48 @@
+.eztoast{
+  padding:10px;
+  min-width:100px;
+  width:fit-content;
+  height:auto;
+  position:fixed;
+  bottom:calc((var(--index) * 50px) + 10px);
+  right:10px;
+  border-radius:5px;
+  background:color-mix(in srgb, var(--status,#444) 80%, black); ;
+  opacity:0;
+  pointer-events:none;
+  z-index:10000;
+  
+  & p{
+    text-shadow:0px 0px 1px #000;
+    color:#fff;
+    margin:0;
+  }
+}
+.toast-show{
+  animation:delete var(--duration,3s) ease forwards;
+}
+@keyframes delete{
+  0%{
+    translate:0 100px;
+    
+    display:block;
+    opacity:1;
+  }
+  10%{
+    
+    translate:0 0px;
+    display:block;
+    opacity:1;
+  }
+  90%{
+    translate: 0 0px;
+    display:block;
+    opacity:1;
+  }
+  100%{
+    
+    translate: 0 -100px;
+    opacity:0;
+    display:none;
+  }
+}
